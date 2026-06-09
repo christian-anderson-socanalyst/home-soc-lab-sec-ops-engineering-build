@@ -33,3 +33,22 @@ The MikroTik hEX Firewall and CSS610 managed switch enforce VLAN separation (usi
 5. Fully Air-Gapped Sandbox
 
 The virtualization layer runs on a Dell Precision 7740 mobile workstation with 128GB of RAM and a dedicated Gen 4 NVMe SSD, running Proxmox. I take snapshots before running anything in my lab, allocate resources to each VM, and have a management workstation on its own dedicated VLAN with a direct uplink to the firewall. The entire lab can be a fire on top of a dumpster fire, and the management plane stays clean. 🔥
+
+## 🗺️ Build Phases
+
+This is a living project. Phases get checked off when they're done, not when I come up with them. 👷
+
+- [ ] **Phase 1: Network Foundation & Hypervisor Deployment** — 
+VLAN segmentation, MikroTik configuration, and Proxmox 
+installation on dedicated hardware.
+- [ ] **Phase 2: Blue Team Stack** — Wazuh SIEM and Security 
+Onion deployed, agents configured, and log ingestion verified.
+- [ ] **Phase 3: Attack/Defend Range** — Kali Linux attacker VM 
+against intentionally vulnerable targets with documented 
+lab exercises.
+- [ ] **Phase 4: Threat Intelligence Integration** — Live IOC 
+feeds wired into the SIEM stack via AlienVault OTX, 
+Abuse.ch, and MISP.
+- [ ] **Phase 5: Hybrid Azure Extension** — On-premises lab 
+extended into Azure via Site-to-Site VPN with cloud-native 
+security tooling layered on top.
