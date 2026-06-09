@@ -20,3 +20,16 @@ Built to showcase. Documented to share. 🔧
 | MikroTik hEX (RB750Gr3) | Lab Gateway / Firewall | 5-port gigabit, RouterOS |
 | MikroTik CSS610-8G-2S+IN | Managed Switch | 8x gigabit, 2x SFP+, SwOS, 802.1Q VLAN |
 | CyberPower CP1000PFCLCD | UPS | 1000VA/600W, Pure Sine Wave, AVR, 10 outlets |
+
+## 🏗️ Architecture Overview
+
+Running a security lab in the same network as everything else (your malware samples, attack tools, and intentionally vulnerable systems) is not a good idea. Everything about this lab was designed around that one constraint.
+
+The MikroTik hEX Firewall and CSS610 managed switch enforce VLAN separation (using IEEE 802.1Q) among the five (5) isolated network segments. There are strict inter-VLAN routing rules that dictate which segment can communicate with which. 🔒
+1. Management
+2. Attacker
+3. Victim
+4. Security Tooling
+5. Fully Air-Gapped Sandbox
+
+The virtualization layer runs on a Dell Precision 7740 mobile workstation with 128GB of RAM and a dedicated Gen 4 NVMe SSD, running Proxmox. I take snapshots before running anything in my lab, allocate resources to each VM, and have a management workstation on its own dedicated VLAN with a direct uplink to the firewall. The entire lab can be a fire on top of a dumpster fire, and the management plane stays clean. 🔥
