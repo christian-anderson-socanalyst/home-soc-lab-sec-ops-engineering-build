@@ -1,4 +1,4 @@
-# 🔐 Home SOC Lab Build
+# 🔐 Home SOC Lab | Security Operations Engineering
 Four (4) years in security operations in an SEC-regulated environment. Hands-on work in a live cyber range. A stack of certs with more on the way.
 
 And yet, here I am building a home lab. 😄
