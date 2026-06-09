@@ -52,3 +52,56 @@ Abuse.ch, and MISP.
 - [ ] **Phase 5: Hybrid Azure Extension** — On-premises lab 
 extended into Azure via Site-to-Site VPN with cloud-native 
 security tooling layered on top.
+
+## 🛠️ Tools & Technologies
+
+### 🌐 Network
+| Tool | Description |
+|---|---|
+| ![MikroTik](https://img.shields.io/badge/MikroTik-RouterOS-blue) | Lab gateway, firewall, and inter-VLAN routing |
+| ![MikroTik](https://img.shields.io/badge/MikroTik-SwOS-blue) | Managed switch VLAN enforcement via 802.1Q |
+
+### 💻 Virtualization
+| Tool | Description |
+|---|---|
+| ![Proxmox](https://img.shields.io/badge/Proxmox-VE-orange) | Hypervisor running all lab VMs on dedicated hardware |
+
+### 🔒 Security Tools
+| Tool | Description |
+|---|---|
+| ![Wazuh](https://img.shields.io/badge/Wazuh-SIEM-red) | Open source SIEM and EDR for log aggregation and alerting |
+| ![Security Onion](https://img.shields.io/badge/Security%20Onion-NSM-green) | Network security monitoring and intrusion detection |
+| ![Kali](https://img.shields.io/badge/Kali-Linux-557C94) | Dedicated attacker VM for lab exercises |
+
+### ☁️ Coming Soon
+| Tool | Description |
+|---|---|
+| ![Azure](https://img.shields.io/badge/Microsoft-Azure-0078D4) | Site-to-Site VPN extension for hybrid lab architecture |
+| ![MISP](https://img.shields.io/badge/MISP-Threat%20Intel-lightgrey) | Self-hosted threat intelligence platform |
+| ![AlienVault](https://img.shields.io/badge/AlienVault-OTX-red) | Open threat exchange IOC feed integration |
+| ![Abuse.ch](https://img.shields.io/badge/Abuse.ch-IOC%20Feeds-black) | Malware and C2 indicator feeds |
+
+---
+
+## 📡 Network Diagram
+
+> 🚧 Diagrams coming in Phase 1. Check back once the hardware arrives and the network is live.
+
+<!-- 
+Once complete, replace this section with:
+
+![Network Topology](phase-1-network-foundation/diagrams/vlan-topology.png)
+
+![Port Map](phase-1-network-foundation/diagrams/port-map.png)
+
+### VLAN Table
+
+| VLAN ID | Name | Purpose | Internet Access |
+|---|---|---|---|
+| 10 | Management | Proxmox UI, switch management | Yes |
+| 20 | Victim | Intentionally vulnerable target VMs | Restricted |
+| 30 | Attacker | Kali Linux | Yes |
+| 40 | Security Tools | Wazuh, Security Onion | Yes |
+| 99 | Isolated Sandbox | Air-gapped malware analysis | No |
+
+-->
