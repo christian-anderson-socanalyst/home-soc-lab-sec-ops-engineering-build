@@ -21,6 +21,29 @@ Built to showcase. Documented to share. 🔧
 | MikroTik CSS610-8G-2S+IN | Managed Switch | 8x gigabit, 2x SFP+, SwOS, 802.1Q VLAN |
 | CyberPower CP1000PFCLCD | UPS | 1000VA/600W, Pure Sine Wave, AVR, 10 outlets |
 
+---
+
+## 🛡️ Zero Trust Design Principles
+
+"Never trust, always verify" gets thrown around a lot. I actually mean it. 😤
+
+Zero Trust isn't something you can buy. It's an approach to design that assumes everything (each user, each system, each application, etc.) is at risk of compromise until explicitly verified. This assumption shapes every decision in this build, from how VLANs are segmented to the administrative access controls.
+
+- ✅ **Explicit verification** — Administrative access is only permitted from the management VLAN. No exceptions.
+- ✅ **No any-to-any firewall rules** — Every inter-VLAN routing rule is explicit and intentional. If it is not explicitly allowed, it is denied.
+- ✅ **Least privilege** — Accounts and services have only the access they need to function. Nothing more.
+- ✅ **Separate admin and user accounts** — Administrative accounts are never used for day-to-day activity.
+- ✅ **Victim VLAN isolation** — Systems on the victim VLAN cannot initiate connections to the management VLAN under any circumstances.
+- ✅ **Attacker VLAN treated as hostile** — Traffic from the attacker VLAN is treated as untrusted by default at the firewall layer.
+- ✅ **Victim systems considered potentially compromised** — Victim VLAN systems are assumed to be compromised at all times by design.
+- ✅ **Universal logging** — Every VLAN feeds logs into the SIEM. Nothing goes unwatched.
+- ✅ **Segmentation limits lateral movement** — Network segmentation ensures a compromised system cannot move freely across the lab environment.
+- 🔜 **MFA for Azure accounts** — Multi-factor authentication enforced on all Azure accounts. *(Phase 5)*
+- 🔜 **Bastion/jump-host access** — Sensitive cloud systems accessible only through a dedicated jump host. *(Phase 5)*
+- 🔜 **Least privilege in Azure** — RBAC enforced across all Azure resources with no standing admin access. *(Phase 5)*
+
+If it is not documented, it did not happen. Every principle above maps to a concrete configuration decision somewhere in this repo. 🔒
+
 ## 🏗️ Architecture Overview
 
 Running a security lab in the same network as everything else (your malware samples, attack tools, and intentionally vulnerable systems) is not a good idea. Everything about this lab was designed around that one constraint.
