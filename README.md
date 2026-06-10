@@ -61,7 +61,7 @@ The virtualization layer runs on a Dell Precision 7740 mobile workstation with 1
 
 This is a living project. Phases get checked off when they're done, not when I come up with them. 👷
 
-- [ ] **Phase 1: Network Foundation & Hypervisor Deployment** — 
+- [ ] **[Phase 1: Network Foundation & Hypervisor Deployment](phase-1-network-foundation/README.md)** — 
 VLAN segmentation, MikroTik configuration, and Proxmox 
 installation on dedicated hardware.
 - [ ] **Phase 2: Blue Team Stack** — Wazuh SIEM and Security 
