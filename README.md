@@ -38,6 +38,7 @@ Zero Trust isn't something you can buy. It's an approach to design that assumes 
 - ✅ **Victim systems considered potentially compromised** — Victim VLAN systems are assumed to be compromised at all times by design.
 - ✅ **Universal logging** — Every VLAN feeds logs into the SIEM. Nothing goes unwatched.
 - ✅ **Segmentation limits lateral movement** — Network segmentation ensures a compromised system cannot move freely across the lab environment.
+- ✅ **Local AI inference** — LLM processing runs entirely on-premises via Ollama. No alert data, log content, or IOC details are transmitted to external AI APIs.
 - 🔜 **MFA for Azure accounts** — Multi-factor authentication enforced on all Azure accounts. *(Phase 5)*
 - 🔜 **Bastion/jump-host access** — Sensitive cloud systems accessible only through a dedicated jump host. *(Phase 5)*
 - 🔜 **Least privilege in Azure** — RBAC enforced across all Azure resources with no standing admin access. *(Phase 5)*
@@ -62,19 +63,12 @@ The virtualization layer runs on a Dell Precision 7740 mobile workstation with 1
 This is a living project. Phases get checked off when they're done, not when I come up with them. 👷
 
 - [ ] **[Phase 1: Network Foundation & Hypervisor Deployment](phase-1-network-foundation/README.md)** — 
-VLAN segmentation, MikroTik configuration, and Proxmox 
-installation on dedicated hardware.
-- [ ] **Phase 2: Blue Team Stack** — Wazuh SIEM and Security 
-Onion deployed, agents configured, and log ingestion verified.
-- [ ] **Phase 3: Attack/Defend Range** — Kali Linux attacker VM 
-against intentionally vulnerable targets with documented 
-lab exercises.
-- [ ] **Phase 4: Threat Intelligence Integration** — Live IOC 
-feeds wired into the SIEM stack via AlienVault OTX, 
-Abuse.ch, and MISP.
-- [ ] **Phase 5: Hybrid Azure Extension** — On-premises lab 
-extended into Azure via Site-to-Site VPN with cloud-native 
-security tooling layered on top.
+VLAN segmentation, MikroTik configuration, and Proxmox installation on dedicated hardware.
+- [ ] **Phase 2: Blue Team Stack** — Wazuh SIEM and Security Onion deployed, agents configured, and log ingestion verified.
+- [ ] **Phase 3: Attack/Defend Range** — Kali Linux attacker VM against intentionally vulnerable targets with documented lab exercises.
+- [ ] **Phase 4: Threat Intelligence Integration** — Live IOC feeds wired into the SIEM stack via AlienVault OTX, Abuse.ch, and MISP.
+- [ ] **Phase 5: Hybrid Azure Extension** — On-premises lab extended into Azure via Site-to-Site VPN with cloud-native security tooling layered on top.
+- [ ] **Phase 6: AI-Assisted SOC Automation** — Local LLM deployed via Ollama with agentic workflows automating Tier 1 alert triage, IOC enrichment, log correlation, and shift handoff reporting using LangChain, n8n, and the Wazuh and Security Onion APIs.
 
 ## 🛠️ Tools & Technologies
 
